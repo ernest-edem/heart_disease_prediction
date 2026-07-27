@@ -13,7 +13,7 @@ venv/
 reports/
 
 # Plots
-plots/
+charts/
 
 # Saved models
 models/
