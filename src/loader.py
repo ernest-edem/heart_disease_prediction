@@ -1,9 +1,36 @@
+import logging
+
 import pandas as pd
-from pathlib import Path
 
-# Load Dataset
-def load_dataset():
-    BASE_DIR = Path(__file__).resolve().parent.parent
+from src.config import DATASET_PATH
 
-    dataset_path = BASE_DIR / "dataset" / "heart_disease.csv"
-    return pd.read_csv(dataset_path)
+
+def load_dataset() -> pd.DataFrame:
+    """
+    Load the heart disease dataset.
+
+    Returns:
+        pd.DataFrame:
+            Loaded dataset.
+
+    Raises:
+        FileNotFoundError:
+            If the dataset file cannot be found.
+    """
+
+    logging.info("Loading dataset...")
+
+    if not DATASET_PATH.exists():
+        raise FileNotFoundError(
+            f"Dataset not found:\n{DATASET_PATH}"
+        )
+
+    dataset = pd.read_csv(DATASET_PATH)
+
+    logging.info(
+        "Dataset loaded successfully (%d rows, %d columns).",
+        dataset.shape[0],
+        dataset.shape[1],
+    )
+
+    return dataset

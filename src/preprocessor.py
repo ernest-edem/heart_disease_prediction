@@ -1,82 +1,262 @@
-import pandas as pd
+"""
+Data preprocessing module.
+
+This module contains all preprocessing functions used by the
+Heart Disease Prediction System, including:
+
+- Dataset inspection
+- Dataset validation
+- Binary encoding
+- One-hot encoding
+- Dataset statistics
+- Saving the processed dataset
+"""
+
 from pathlib import Path
 
+import logging
+import pandas as pd
+import numpy as np
 
-#Dataset Info
-def dataset_info(df):
-    print(f"\nDataset Information")
-    print("-" * 20)
-    print(df.info())
+from src.config import DATASET_DIR
 
-    print(f"\nDataset Shape: {df.shape}")
+logger = logging.getLogger(__name__)
 
-    # Missing and Duplicate Values
-    print(f"\n{df.isnull().sum()}")
-    print(f"\nTotal Duplicates: {df.duplicated().sum()}")
+
+# ==========================================================
+# Dataset Information
+# ==========================================================
+def dataset_info(df: pd.DataFrame) -> dict:
+    """
+    Generate basic information about the dataset.
+
+    Args:
+        df:
+            Input dataset.
+
+    Returns:
+        Dictionary containing dataset information.
+    """
+
+    info = {
+        "shape": df.shape,
+        "columns": list(df.columns),
+        "data_types": df.dtypes,
+        "missing_values": df.isnull().sum(),
+        "total_missing": int(df.isnull().sum().sum()),
+        "duplicate_rows": int(df.duplicated().sum()),
+    }
+
+    logger.info(
+        "Dataset loaded successfully (%d rows, %d columns).",
+        df.shape[0],
+        df.shape[1],
+    )
+
+    return info
+
+#===========
+def replace_zero_cholesterol(df: pd.DataFrame) ->pd.DataFrame:
+    df["Cholesterol"] = df["Cholesterol"].replace(0, np.nan)
+    df["Cholesterol"] = df["Cholesterol"].fillna(df["Cholesterol"].median())
     return df
 
 
-#Feature Encoding>>>>>>>
+# ==========================================================
+# Dataset Validation
+# ==========================================================
+def validate_dataset(df: pd.DataFrame) -> None:
+    """
+    Validate that all required columns exist.
 
-def encoding(df):
+    Args:
+        df:
+            Dataset to validate.
 
-    df_new = df.copy()
-    # binary_encoding
-    df_new["Sex"] = df_new["Sex"].map({
+    Raises:
+        ValueError:
+            If one or more required columns are missing.
+    """
+
+    required_columns = [
+        "Age",
+        "Sex",
+        "ChestPainType",
+        "RestingBP",
+        "Cholesterol",
+        "FastingBS",
+        "RestingECG",
+        "MaxHR",
+        "ExerciseAngina",
+        "Oldpeak",
+        "ST_Slope",
+        "HeartDisease",
+    ]
+
+    missing_columns = [
+        column
+        for column in required_columns
+        if column not in df.columns
+    ]
+
+    if missing_columns:
+        raise ValueError(
+            f"Missing required columns: {missing_columns}"
+        )
+
+
+# ==========================================================
+# Binary Encoding
+# ==========================================================
+def encode_binary_features(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Encode binary categorical variables.
+
+    Args:
+        df:
+            Original dataset.
+
+    Returns:
+        Encoded dataset.
+    """
+
+    df = df.copy()
+
+    df["Sex"] = df["Sex"].map({
         "M": 1,
         "F": 0
     })
 
-    df_new["ExerciseAngina"] = df_new["ExerciseAngina"].map({
+    df["ExerciseAngina"] = df["ExerciseAngina"].map({
         "Y": 1,
         "N": 0
     })
-    return df_new
 
-# one_hot_encoding
-def hot_encoding(df_new):
+    logger.info("Binary encoding completed.")
 
-    df_new = pd.get_dummies(df_new, columns=["RestingECG"], drop_first=True)
+    return df
 
-    df_new = pd.get_dummies(df_new, columns=["ChestPainType"], drop_first=True)
 
-    df_new= pd.get_dummies(df_new, columns=["ST_Slope"], drop_first=True)
-    return df_new
+# ==========================================================
+# One-Hot Encoding
+# ==========================================================
+def one_hot_encode_features(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Apply one-hot encoding to categorical features.
 
+    Args:
+        df:
+            Dataset after binary encoding.
+
+    Returns:
+        Encoded dataset.
+    """
+
+    categorical_columns = [
+        "RestingECG",
+        "ChestPainType",
+        "ST_Slope",
+    ]
+
+    df = pd.get_dummies(
+        df,
+        columns=categorical_columns,
+        drop_first=True,
+    )
+
+    logger.info("One-hot encoding completed.")
+
+    return df
+
+
+# ==========================================================
+# Complete Preprocessing Pipeline
+# ==========================================================
+def preprocess_dataset(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Execute the complete preprocessing pipeline.
+
+    Args:
+        df:
+            Raw dataset.
+
+    Returns:
+        Fully processed dataset.
+    """
+
+    validate_dataset(df)
+
+    df = encode_binary_features(df)
+
+    df = one_hot_encode_features(df)
+
+    return df
+
+
+# ==========================================================
 # Save Encoded Dataset
-def save_encoded_dataset(df_new):
-    BASE_DIR = Path(__file__).resolve().parent.parent
+# ==========================================================
+def save_encoded_dataset(df: pd.DataFrame) -> None:
+    """
+    Save the encoded dataset.
 
-    dataset_path = BASE_DIR / "dataset" / "encoded_dataset.csv"
+    Args:
+        df:
+            Encoded dataset.
+    """
 
-    df_new.to_csv(dataset_path)
-    return
+    output_path = DATASET_DIR / "encoded_dataset.csv"
 
+    df.to_csv(output_path, index=False)
+
+    logger.info(
+        "Encoded dataset saved to %s",
+        output_path,
+    )
+
+
+# ==========================================================
 # Dataset Statistics
-def dataset_statistics(df_new):
-    dataset_stats = pd.DataFrame({
-        "Metrics": [
-            "Total Missing Values",
-            "Total Duplicates",
+# ==========================================================
+def dataset_statistics(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Generate dataset summary statistics.
+
+    Args:
+        df:
+            Processed dataset.
+
+    Returns:
+        DataFrame containing summary statistics.
+    """
+
+    statistics = pd.DataFrame({
+        "Metric": [
+            "Rows",
+            "Columns",
             "Shape",
+            "Total Missing Values",
+            "Total Duplicate Rows",
             "Highest Age",
             "Lowest Age",
             "Average Age",
             "Number of Males",
-            "Number of Females"
+            "Number of Females",
         ],
-        "Values": [
-            f"{df_new.isnull().sum().sum()}",
-            f"{df_new.duplicated().sum()}",
-            f"{df_new.shape}",
-            f"{df_new['Age'].max()}",
-            f"{df_new['Age'].min()}",
-            f"{df_new['Age'].mean():.2f}",
-            f"{(df_new['Sex'] == 1).sum()}",
-            f"{(df_new['Sex'] == 0).sum()}"
+        "Value": [
+            df.shape[0],
+            df.shape[1],
+            str(df.shape),
+            df.isnull().sum().sum(),
+            df.duplicated().sum(),
+            df["Age"].max(),
+            df["Age"].min(),
+            round(df["Age"].mean(), 2),
+            (df["Sex"] == 1).sum(),
+            (df["Sex"] == 0).sum(),
         ]
     })
-    return dataset_stats
 
+    logger.info("Dataset statistics generated.")
 
-
+    return statistics
