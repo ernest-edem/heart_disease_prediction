@@ -1,63 +1,179 @@
 # 🫀 Heart Disease Prediction
 
-> A modular, production-ready machine learning pipeline for predicting cardiovascular risk using Logistic Regression, Decision Tree, and Random Forest classifiers.
+> **A modular, production-ready Machine Learning pipeline for predicting cardiovascular disease risk using Logistic Regression, Decision Tree, and Random Forest classifiers.**
 
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue?style=flat-square&logo=python)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-latest-orange?style=flat-square&logo=scikit-learn)
-![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
-![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square)
+<p align="center">
+    <img src="assets/github_banner.png" width="100%">
+</p>
 
----
-
-## 📑 Table of Contents
-
-- [Overview](#-overview)
-- [Features](#-features)
-- [Project Architecture](#️-project-architecture)
-- [Dataset](#-dataset)
-- [Model Performance](#-model-performance)
-- [Technologies Used](#-technologies-used)
-- [Prerequisites](#-prerequisites)
-- [Installation](#️-installation)
-- [Configuration](#-configuration)
-- [Running the Project](#️-running-the-project)
-- [Example Prediction](#-example-prediction)
-- [Project Screenshots](#️-project-screenshots)
-- [Design Principles](#-design-principles)
-- [Future Improvements](#-future-improvements)
-- [What I Learned](#-what-i-learned)
-- [Contributing](#-contributing)
-- [License](#-license)
-- [Acknowledgments](#-acknowledgments)
-- [Author](#-author)
+![Python](https://img.shields.io/badge/Python-3.10+-blue?style=flat-square\&logo=python)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-latest-orange?style=flat-square\&logo=scikit-learn)
+![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458?style=flat-square\&logo=pandas)
+![NumPy](https://img.shields.io/badge/NumPy-Numerical%20Computing-013243?style=flat-square\&logo=numpy)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-green?style=flat-square)
+![License](https://img.shields.io/badge/License-MIT-success?style=flat-square)
+![Status](https://img.shields.io/badge/Status-Production%20Ready-brightgreen?style=flat-square)
 
 ---
 
-## 📌 Overview
+# 📑 Table of Contents
 
-This project implements an end-to-end supervised machine learning pipeline that predicts the likelihood of heart disease in patients based on clinical and demographic features. The pipeline covers the complete ML lifecycle — from data ingestion and preprocessing through model training, evaluation, and inference — and is structured following software engineering best practices for maintainability and scalability.
-
----
-
-## ✨ Features
-
-- Automated end-to-end ML pipeline from raw data to prediction
-- Multi-model training and comparison (Logistic Regression, Decision Tree, Random Forest)
-- Feature importance analysis per model
-- Automated report and chart generation
-- New patient inference with probability scores
-- Centralized configuration via `config.py`
-- Trained model persistence using Joblib
+* 📌 Overview
+* 🎯 Project Objectives
+* ⭐ Key Highlights
+* 🌍 Why This Project?
+* 🔄 Machine Learning Pipeline
+* 🏗️ Project Architecture
+* 📂 Repository Structure
+* 📚 Dataset
+* 📊 Model Performance
+* 📈 Repository Statistics
 
 ---
 
-## 🏗️ Project Architecture
+# 📌 Overview
 
-The project follows a modular architecture where each module has a single responsibility, making the codebase easy to maintain, test, and extend.
+Cardiovascular disease remains one of the leading causes of death worldwide, making early diagnosis and risk assessment essential for improving patient outcomes. Machine Learning provides an effective way to assist healthcare professionals by identifying patterns in patient data that may indicate the presence of heart disease.
 
-### Pipeline Flow
+This project presents a complete end-to-end Machine Learning pipeline that predicts the likelihood of heart disease using patient clinical information. The pipeline covers every stage of the Machine Learning lifecycle—from data loading and preprocessing to model training, evaluation, visualization, and prediction for new patients.
 
+The project was intentionally developed using modular software engineering principles to demonstrate clean architecture, reusable code, maintainability, and production-ready project organization.
+
+It serves as both a practical Machine Learning application and a portfolio project demonstrating best practices in software engineering for AI systems.
+
+---
+
+# 🎯 Project Objectives
+
+The primary objectives of this project are to:
+
+* Build a complete end-to-end Machine Learning pipeline.
+* Explore and understand a real-world healthcare dataset.
+* Clean and preprocess clinical patient data.
+* Perform feature engineering and categorical encoding.
+* Train multiple supervised learning classification models.
+* Compare model performance using standardized evaluation metrics.
+* Generate automated reports and visualizations.
+* Predict heart disease risk for new patients.
+* Save trained models for future inference.
+* Demonstrate production-ready Machine Learning project architecture.
+* Apply software engineering best practices to Machine Learning development.
+
+---
+
+# ⭐ Key Highlights
+
+This project includes:
+
+* ✅ End-to-end Machine Learning workflow
+* ✅ Production-ready modular architecture
+* ✅ Three supervised learning algorithms
+* ✅ Automated preprocessing pipeline
+* ✅ Feature engineering
+* ✅ Logistic Regression implementation
+* ✅ Decision Tree implementation
+* ✅ Random Forest implementation
+* ✅ Model evaluation and comparison
+* ✅ Feature importance analysis
+* ✅ Automated report generation
+* ✅ Automated chart generation
+* ✅ Model persistence using Joblib
+* ✅ New patient prediction
+* ✅ Centralized project configuration
+* ✅ Easily extendable to FastAPI, Docker, Streamlit, or cloud deployment
+
+---
+
+# 🌍 Why This Project?
+
+Artificial Intelligence is increasingly transforming healthcare by enabling faster, more consistent, and data-driven decision making.
+
+Heart disease prediction is a classic binary classification problem that provides an excellent opportunity to demonstrate the complete Machine Learning workflow while addressing a meaningful real-world challenge.
+
+Rather than focusing solely on model accuracy, this repository emphasizes:
+
+* Software engineering best practices
+* Clean and modular architecture
+* Reproducibility
+* Maintainability
+* Scalability
+* Reusability
+* Production readiness
+
+The architecture allows new models, preprocessing techniques, and deployment strategies to be added with minimal changes to the existing codebase.
+
+This repository was created as part of my Machine Learning portfolio to showcase practical AI engineering skills beyond notebook-based experimentation.
+
+---
+
+# 🔄 Machine Learning Pipeline
+
+<p align="center">
+    <img src="assets/ml_pipeline.png" width="90%">
+</p>
+
+The project follows a structured Machine Learning workflow:
+
+```text
+Raw Dataset
+      │
+      ▼
+Load Dataset
+      │
+      ▼
+Explore Dataset
+      │
+      ▼
+Data Preprocessing
+      │
+      ▼
+Feature Engineering
+      │
+      ▼
+Train-Test Split
+      │
+      ▼
+Feature Scaling
+      │
+      ▼
+Train ML Models
+      │
+      ▼
+Generate Predictions
+      │
+      ▼
+Evaluate Performance
+      │
+      ▼
+Feature Importance
+      │
+      ▼
+Model Comparison
+      │
+      ▼
+Generate Reports
+      │
+      ▼
+Generate Charts
+      │
+      ▼
+Save Trained Models
+      │
+      ▼
+Predict New Patient
 ```
+
+---
+
+# 🏗️ Project Architecture
+
+<p align="center">
+    <img src="assets/architecture.png" width="95%">
+</p>
+
+Each module has a single responsibility, making the application easier to maintain, test, and extend.
+
+```text
 main.py
     │
     ▼
@@ -69,7 +185,7 @@ preprocessor.py
     ▼
 feature_engineering.py
     │
-    ├──────────────► StandardScaler
+    ├────────► StandardScaler
     │
     ▼
 train_model.py
@@ -80,9 +196,9 @@ predictions.py
     ▼
 model_evaluation.py
     │
-    ├──────────────► feature_importance.py
+    ├────────► feature_importance.py
     │
-    ├──────────────► model_comparison.py
+    ├────────► model_comparison.py
     │
     ▼
 visualization.py
@@ -97,141 +213,218 @@ save_models.py
 predict_patient.py
 ```
 
-### End-to-End Workflow
-
-```
-Load Dataset → Explore Dataset → Preprocess Data → Feature Engineering
-      │
-      ▼
-Split Dataset → Scale Features → Train Models → Generate Predictions
-      │
-      ▼
-Evaluate Models → Feature Importance → Compare Models
-      │
-      ▼
-Generate Reports & Charts → Save Models → Predict New Patient
-```
-
 ### Module Responsibilities
 
-| Module | Responsibility |
-|---|---|
-| `main.py` | Controls the complete ML workflow from data loading to prediction |
-| `loader.py` | Loads the dataset into a Pandas DataFrame |
-| `preprocessor.py` | Cleans data, encodes categorical variables, generates statistics, and saves the processed dataset |
-| `feature_engineering.py` | Selects features, splits the dataset, and scales numerical features for Logistic Regression |
-| `train_model.py` | Trains Logistic Regression, Decision Tree, and Random Forest models |
-| `predictions.py` | Generates predictions and probability scores for the test dataset |
-| `model_evaluation.py` | Calculates Accuracy, Precision, Recall, F1 Score, Confusion Matrix, and Classification Report |
-| `feature_importance.py` | Calculates feature importance for all trained models |
-| `model_comparison.py` | Builds a comparison report summarising performance across all models |
-| `predict_patient.py` | Predicts heart disease risk for new patient records using trained models |
-| `sample_data.py` | Generates sample patient records for testing inference |
-| `visualization.py` | Creates charts such as distributions and confusion matrices |
-| `generate_reports.py` | Saves reports, text files, and visualization images |
-| `save_models.py` | Saves and reloads trained models using Joblib |
-| `config.py` | Stores configurable project constants such as dataset paths and training parameters |
+| Module                     | Responsibility                                            |
+| -------------------------- | --------------------------------------------------------- |
+| **main.py**                | Controls the complete Machine Learning workflow           |
+| **loader.py**              | Loads the dataset                                         |
+| **preprocessor.py**        | Cleans, encodes, and preprocesses data                    |
+| **feature_engineering.py** | Performs feature selection, train-test split, and scaling |
+| **train_model.py**         | Trains all Machine Learning models                        |
+| **predictions.py**         | Generates predictions and probability scores              |
+| **model_evaluation.py**    | Evaluates model performance                               |
+| **feature_importance.py**  | Computes feature importance for trained models            |
+| **model_comparison.py**    | Compares all trained models                               |
+| **visualization.py**       | Generates charts and visualizations                       |
+| **generate_reports.py**    | Saves reports, charts, and text outputs                   |
+| **save_models.py**         | Saves and loads trained models                            |
+| **predict_patient.py**     | Predicts heart disease risk for new patient data          |
+| **sample_data.py**         | Creates sample patient records for testing                |
+| **config.py**              | Stores configurable project constants                     |
 
 ---
 
-## 📚 Dataset
+# 📂 Repository Structure
 
-This project uses a publicly available heart disease dataset containing demographic and cardiovascular health information.
+```text
+heart_disease_prediction/
+│
+├── assets/
+│   ├── github_banner.png
+│   ├── ml_pipeline.png
+│   ├── architecture.png
+│   ├── age_distribution.png
+│   ├── cholesterol_distribution.png
+│   ├── heart_disease_distribution.png
+│   ├── lg_confusion_matrix.png
+│   ├── decision_tree_confusion_matrix.png
+│   ├── random_forest_confusion_matrix.png
+│   └── rf_feature_importance.png
+│
+├── charts/
+│
+├── dataset/
+│
+├── models/
+│
+├── reports/
+│
+├── src/
+│   ├── loader.py
+│   ├── preprocessor.py
+│   ├── feature_engineering.py
+│   ├── train_model.py
+│   ├── predictions.py
+│   ├── model_evaluation.py
+│   ├── feature_importance.py
+│   ├── model_comparison.py
+│   ├── visualization.py
+│   ├── predict_patient.py
+│   ├── sample_data.py
+│   ├── save_models.py
+│   ├── generate_reports.py
+│   ├── config.py
+│   └── main.py
+│
+├── requirements.txt
+├── README.md
+├── LICENSE
+└── .gitignore
+```
 
-**Source:** Kaggle Machine Learning Repository
+---
 
-### Input Features
+# 📚 Dataset
 
-| Feature | Description |
-|---|---|
-| Age | Patient age in years |
-| Sex | Biological sex (Male / Female) |
-| Chest Pain Type | Type of chest pain experienced |
-| Resting Blood Pressure | Resting BP in mm Hg |
-| Cholesterol | Serum cholesterol in mg/dL |
-| Fasting Blood Sugar | Fasting blood sugar > 120 mg/dL (1 = True, 0 = False) |
-| Resting ECG | Resting electrocardiographic results |
-| Maximum Heart Rate | Maximum heart rate achieved |
-| Exercise-Induced Angina | Whether exercise induces angina (Yes / No) |
-| Oldpeak | ST depression induced by exercise relative to rest |
-| ST Slope | Slope of the peak exercise ST segment |
+This project uses the **Heart Failure Prediction Dataset**, a publicly available healthcare dataset commonly used for binary classification tasks.
+
+The dataset contains demographic, physiological, and cardiovascular measurements collected from **918 patients**.
+
+## Dataset Features
+
+| Feature        | Description                      |
+| -------------- | -------------------------------- |
+| Age            | Patient age                      |
+| Sex            | Biological sex                   |
+| ChestPainType  | Chest pain category              |
+| RestingBP      | Resting blood pressure           |
+| Cholesterol    | Serum cholesterol                |
+| FastingBS      | Fasting blood sugar indicator    |
+| RestingECG     | Resting electrocardiogram result |
+| MaxHR          | Maximum heart rate               |
+| ExerciseAngina | Exercise-induced angina          |
+| Oldpeak        | ST depression                    |
+| ST_Slope       | Peak exercise ST slope           |
 
 ### Target Variable
 
-| Value | Label |
-|---|---|
-| `0` | No Heart Disease |
-| `1` | Heart Disease |
+| Value | Meaning          |
+| ----: | ---------------- |
+|     0 | No Heart Disease |
+|     1 | Heart Disease    |
 
 ---
 
-## 📊 Model Performance
+# 📊 Model Performance
 
-All models are evaluated against the same held-out test dataset for a fair comparison.
+All three Machine Learning models were evaluated using the same train-test split to ensure fair comparison.
 
-| Model | Accuracy | Precision | Recall | F1 Score |
-|---|---:|---:|---:|---:|
-| Logistic Regression | 0.90 | 0.90 | 0.92 | 0.91 |
-| Decision Tree | 0.74 | 0.76 | 0.77 | 0.77 |
-| Random Forest | 0.85 | 0.86 | 0.87 | 0.87 |
+| Model               | Accuracy | Precision |  Recall | F1 Score |
+| ------------------- | -------: | --------: | ------: | -------: |
+| Logistic Regression |  **90%** |   **90%** | **92%** |  **91%** |
+| Decision Tree       |      74% |       76% |     77% |      77% |
+| Random Forest       |      85% |       86% |     87% |      87% |
 
-### 🏆 Best Performing Model: Logistic Regression
+## 🏆 Selected Model
 
-The evaluation results demonstrate that **Logistic Regression achieved the best overall performance**, outperforming the other models across all major evaluation metrics. With an accuracy of **90%** and an F1 score of **91%**, the model provided the strongest balance between correctly identifying positive cases and minimizing classification errors.
+After comprehensive evaluation, **Logistic Regression** achieved the best overall performance.
 
-The model achieved a **92% recall score**, which is particularly significant in healthcare-related prediction systems where identifying potential disease cases is a priority. A high recall value reduces the likelihood of false negatives, ensuring that fewer high-risk patients are incorrectly classified as healthy.
+Reasons for selecting Logistic Regression:
 
-**Random Forest** achieved competitive performance with an F1 score of **87%**, demonstrating good generalization capability and robustness through ensemble learning. However, its performance remained slightly below Logistic Regression for this dataset.
+* Highest Accuracy
+* Highest Recall
+* Best F1 Score
+* Strong interpretability
+* Suitable for healthcare prediction systems
+* Lower risk of overfitting on this dataset
 
-**Decision Tree** produced the lowest performance, with an accuracy of **74%** and an F1 score of **77%**, suggesting possible limitations in capturing complex patterns and a higher risk of overfitting.
-
-### Final Model Selection
-
-Based on comprehensive evaluation, **Logistic Regression was selected as the final prediction model** due to its superior classification performance, interpretability, and suitability for healthcare risk prediction scenarios.
-
-The selected model provides:
-- ✅ High predictive accuracy (90%)
-- ✅ Strong disease detection capability (92% recall)
-- ✅ Balanced classification performance (91% F1 score)
-- ✅ Improved interpretability for explainable AI applications
-
-This evaluation confirms that the developed machine learning pipeline can effectively support automated disease risk assessment while maintaining transparency and reliability.
-
+Its high recall makes it particularly valuable in medical prediction systems where minimizing false negatives is essential.
 
 ---
 
-## 📦 Technologies Used
+# 📈 Repository Statistics
 
-| Technology | Purpose |
-|---|---|
-| Python 3.8+ | Core programming language |
-| Pandas | Data loading and manipulation |
-| NumPy | Numerical computation |
-| scikit-learn | Model training, evaluation, and scaling |
-| Matplotlib | Chart and visualization generation |
-| Joblib | Model serialization and persistence |
+| Metric                  |         Value |
+| ----------------------- | ------------: |
+| Dataset Size            |  918 Patients |
+| Features                |            15 |
+| Target Classes          |             2 |
+| Machine Learning Models |             3 |
+| Python Modules          |           13+ |
+| Reports Generated       |           10+ |
+| Charts Generated        |            6+ |
+| Saved Models            |             4 |
+| Prediction Pipeline     |    End-to-End |
+| Architecture            |       Modular |
+| Deployment Ready        |         ✅ Yes |
+| Documentation           | Comprehensive |
+| License                 |           MIT |
 
 ---
 
-## 🔧 Prerequisites
+-------------------------------------------------------------------
 
-Before installation, ensure you have the following installed on your system:
+# 🛠️ Technologies Used
 
-- **Python 3.8 or higher** — [Download Python](https://www.python.org/downloads/)
-- **pip** — Python package manager (included with Python 3.4+)
-- **Git** — [Download Git](https://git-scm.com/downloads)
+This project was built using industry-standard tools and libraries commonly used in Machine Learning and Software Engineering.
 
-Verify your Python installation:
+| Technology   | Purpose                                    |
+| ------------ | ------------------------------------------ |
+| Python 3.10+ | Core programming language                  |
+| Pandas       | Data loading and manipulation              |
+| NumPy        | Numerical computing                        |
+| scikit-learn | Machine Learning algorithms and evaluation |
+| Matplotlib   | Data visualization                         |
+| Joblib       | Model serialization and persistence        |
+| Git          | Version control                            |
+| GitHub       | Source code hosting and collaboration      |
+
+---
+
+# 🧠 Skills Demonstrated
+
+This project demonstrates practical experience in:
+
+* Machine Learning
+* Data Cleaning
+* Data Preprocessing
+* Feature Engineering
+* Exploratory Data Analysis (EDA)
+* Feature Scaling
+* Supervised Learning
+* Binary Classification
+* Model Evaluation
+* Feature Importance Analysis
+* Data Visualization
+* Software Engineering
+* Modular Programming
+* Project Documentation
+* Version Control with Git
+* Model Serialization
+* Reproducible Machine Learning Pipelines
+
+---
+
+# 🔧 Prerequisites
+
+Before running this project, ensure you have the following installed:
+
+* Python 3.10 or later
+* Git
+* pip (Python package manager)
+
+Verify your installation:
 
 ```bash
 python --version
-# or
-python3 --version
+pip --version
+git --version
 ```
 
 ---
 
-## ⚙️ Installation
+# ⚙️ Installation
 
 ### 1. Clone the Repository
 
@@ -239,7 +432,7 @@ python3 --version
 git clone https://github.com/ernest-edem/heart_disease_prediction.git
 ```
 
-### 2. Navigate to the Project Directory
+### 2. Navigate into the Project
 
 ```bash
 cd heart_disease_prediction
@@ -247,29 +440,37 @@ cd heart_disease_prediction
 
 ### 3. Create a Virtual Environment
 
-**Windows:**
+**Windows**
+
 ```bash
 python -m venv .venv
 ```
 
-**Linux / macOS:**
+**Linux / macOS**
+
 ```bash
 python3 -m venv .venv
 ```
 
+---
+
 ### 4. Activate the Virtual Environment
 
-**Windows:**
+**Windows**
+
 ```bash
 .venv\Scripts\activate
 ```
 
-**Linux / macOS:**
+**Linux / macOS**
+
 ```bash
 source .venv/bin/activate
 ```
 
-### 5. Install Required Packages
+---
+
+### 5. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -277,194 +478,320 @@ pip install -r requirements.txt
 
 ---
 
-## 🔩 Configuration
+# 🔩 Configuration
 
-All configurable constants are centralised in `config.py`. Before running the project, review and adjust the following settings if needed:
+Most project settings are centralized in `config.py`.
 
-| Constant | Description | Default |
-|---|---|---|
-| `DATASET_DIR` | Path to the raw CSV dataset | `heart_disease.csv` |
-| `RANDOM_SEED` | Seed for reproducibility | `42` |
-| `TEST_SIZE` | Proportion of data for testing | `0.2` |
-| `REPORT_DIR` | Directory for saved reports and charts | `reports/` |
-| `MODELS_DIR` | Directory for saved model files | `models/` |
+Example configuration:
+
+| Constant      | Description                    |
+| ------------- | ------------------------------ |
+| DATASET_PATH  | Dataset location               |
+| REPORT_FOLDER | Report output folder           |
+| MODEL_FOLDER  | Saved models folder            |
+| CHART_FOLDER  | Charts output folder           |
+| RANDOM_STATE  | Random seed                    |
+| TEST_SIZE     | Train/Test split ratio         |
+| N_ESTIMATORS  | Random Forest trees            |
+| MAX_ITER      | Logistic Regression iterations |
+
+Changing these values allows the project to be adapted without modifying the core pipeline.
 
 ---
 
-## ▶️ Running the Project
+# ▶️ Running the Project
 
-Run the full pipeline with a single command:
+Execute the entire Machine Learning pipeline using:
 
 ```bash
 python main.py
 ```
 
-The pipeline will automatically:
+The pipeline automatically performs:
 
-1. Load and inspect the dataset
-2. Preprocess and encode categorical features
-3. Perform feature engineering and scaling
-4. Split data into training and testing sets
-5. Train all three machine learning models
-6. Evaluate and compare model performance
-7. Generate reports and charts
-8. Save trained models to disk
-9. Predict heart disease risk for a sample new patient
-
----
-
-## 📋 Example Prediction
-
-### Input Patient
-
-| Feature | Value |
-|---|---:|
-| Age | 54 |
-| Sex | Male |
-| Resting Blood Pressure | 145 mmHg |
-| Cholesterol | 245 mg/dL |
-| Fasting Blood Sugar | 1 (True) |
-| Maximum Heart Rate | 122 bpm |
-| Exercise-Induced Angina | Yes |
-| Oldpeak | 2.4 |
-
-### Output
-
-```
-Model:       Random Forest Classifier
-Prediction:  Heart Disease
-Probability: 92.7%
-```
+1. Dataset loading
+2. Dataset inspection
+3. Data preprocessing
+4. Feature engineering
+5. Train/Test split
+6. Feature scaling
+7. Model training
+8. Model evaluation
+9. Feature importance generation
+10. Model comparison
+11. Chart generation
+12. Report generation
+13. Model serialization
+14. New patient prediction
 
 ---
 
-## 📷 Project Screenshots
+# 📋 Example Prediction
 
-![Age Distribution](assets/age_distribution.png)
-![Cholesterol Distribution](assets/cholesterol_distribution)
-![Random Forest Confusion Matrix](assets/random_forest_confusion_matrix.png)
-![Heart Disease Distribution](assets/heart_disease_distribution.png)
-![Random Forest Feature importance](assets/rf_feature_importance.png)
+## Sample Patient
 
----
+| Feature             | Value |
+| ------------------- | ----: |
+| Age                 |    54 |
+| Sex                 |  Male |
+| Resting BP          |   145 |
+| Cholesterol         |   245 |
+| Fasting Blood Sugar |     1 |
+| Max Heart Rate      |   122 |
+| Exercise Angina     |   Yes |
+| Oldpeak             |   2.4 |
 
-## 🧩 Design Principles
+### Prediction Results
 
-This project was developed following established software engineering best practices:
-
-| Principle | Implementation |
-|---|---|
-| **Modular Architecture** | Each module has a single, well-defined responsibility |
-| **Separation of Concerns** | Preprocessing, training, evaluation, and visualization are fully isolated |
-| **Reusable Functions** | Each component can be independently imported into other projects |
-| **Reproducibility** | Random seed and split ratios are centralised in `config.py` |
-| **Maintainability** | Adding a new model or preprocessing step requires minimal changes |
-| **Scalability** | The structure supports extension into a REST API, web app, or production ML pipeline |
-
----
-
-## 🚀 Future Improvements
-
-Planned enhancements include:
-
-- [ ] Hyperparameter tuning with `GridSearchCV`
-- [ ] K-Fold cross-validation
-- [ ] XGBoost, LightGBM, and CatBoost implementations
-- [ ] SHAP explainability for model interpretability
-- [ ] Advanced feature selection techniques
-- [ ] FastAPI REST API deployment
-- [ ] Streamlit interactive dashboard
-- [ ] Docker containerization
-- [ ] Unit testing with `pytest`
-- [ ] GitHub Actions CI/CD pipeline
-- [ ] Cloud deployment (AWS, Azure, or Google Cloud)
+| Model               | Prediction    | Probability |
+| ------------------- | ------------- | ----------: |
+| Logistic Regression | Heart Disease |       91.6% |
+| Decision Tree       | Heart Disease |       90.2% |
+| Random Forest       | Heart Disease |       92.7% |
 
 ---
 
-## 📖 What I Learned
+# 📷 Project Screenshots
 
-Developing this project strengthened my understanding of:
+## Dataset Visualizations
 
-- Structuring machine learning projects using modular architecture
-- Data preprocessing and categorical feature encoding techniques
-- Training and comparing multiple classification algorithms
-- Evaluating models using standard classification metrics
-- Feature importance analysis across different model types
-- Persisting and reloading trained models for inference
-- Organising reports and visualizations for reproducibility
-- Writing maintainable, reusable, and production-oriented Python code
-- Software engineering for ML projects
-- Managing machine learning artifacts
-- Organizing production-ready project structures
+<p align="center">
+<img src="assets/age_distribution.png" width="45%">
+<img src="assets/cholesterol_distribution.png" width="45%">
+</p>
+
+<p align="center">
+<img src="assets/heart_disease_distribution.png" width="45%">
+<img src="assets/model_comparison.png" width="45%">
+</p>
+
+---
+
+## Model Evaluation
+
+<p align="center">
+<img src="assets/lg_confusion_matrix.png" width="45%">
+<img src="assets/decision_tree_confusion_matrix.png" width="45%">
+</p>
+
+<p align="center">
+<img src="assets/random_forest_confusion_matrix.png" width="45%">
+<img src="assets/rf_feature_importance.png" width="45%">
+</p>
+
+---
+
+# 📊 Generated Reports
+
+Running the project automatically generates:
+
+* Dataset Summary
+* Encoded Dataset
+* Logistic Regression Prediction Report
+* Decision Tree Prediction Report
+* Random Forest Prediction Report
+* Feature Importance Reports
+* Model Comparison Report
+* Classification Reports
+* Confusion Matrix Reports
+* New Patient Prediction Report
+
+All reports are stored inside the `reports/` directory.
+
+---
+
+# 💾 Saved Models
+
+The following trained models are automatically saved:
+
+* Logistic Regression
+* Decision Tree
+* Random Forest
+* StandardScaler
+
+These artifacts can be reloaded without retraining, enabling fast inference and deployment.
+
+---
+
+# 🧩 Design Principles
+
+The project follows established software engineering principles.
+
+| Principle              | Implementation                                                      |
+| ---------------------- | ------------------------------------------------------------------- |
+| Modular Design         | Independent modules with single responsibilities                    |
+| Separation of Concerns | Training, preprocessing, evaluation, and visualization are isolated |
+| Reusability            | Components can be reused across projects                            |
+| Maintainability        | Clean, readable, and well-organized code                            |
+| Scalability            | Easy to add new models and preprocessing techniques                 |
+| Reproducibility        | Centralized configuration and deterministic random seed             |
+
+---
+
+# 🗺️ Project Roadmap
+
+## ✅ Completed
+
+* Dataset preprocessing
+* Feature engineering
+* Logistic Regression
+* Decision Tree
+* Random Forest
+* Model evaluation
+* Feature importance
+* Automated reports
+* Automated charts
+* Patient prediction
+* Model persistence
+
+## 🚧 Planned
+
+* Hyperparameter tuning
+* Cross-validation
+* XGBoost
+* LightGBM
+* CatBoost
+* SHAP Explainability
+* FastAPI deployment
+* Streamlit dashboard
+* Docker
+* GitHub Actions CI/CD
+* Cloud deployment (AWS / Azure / GCP)
+
+---
+
+# 🚀 Future Improvements
+
+Potential future enhancements include:
+
+* Automated hyperparameter optimization
+* Advanced feature engineering
+* Explainable AI (SHAP/LIME)
+* REST API using FastAPI
+* Interactive dashboard using Streamlit
+* Docker containerization
+* MLOps workflow
+* Continuous Integration / Continuous Deployment
+* Cloud hosting
+* Real-time prediction API
+
+---
+
+# 📖 What I Learned
+
+Building this project strengthened my understanding of:
+
+* Machine Learning workflows
+* Data preprocessing techniques
+* Feature engineering
+* Binary classification
+* Model evaluation
+* Feature importance
+* Modular Python development
+* Production-ready project organization
+* Documentation best practices
+* Version control with Git
+* Building maintainable ML systems
 
 ---
 
 # 🚧 Challenges and Solutions
 
-| Challenge | Solution |
-|-----------|----------|
-| Encoding categorical variables | Used binary and one-hot encoding |
-| Different scaling requirements | Applied StandardScaler only to Logistic Regression |
-| Code duplication | Refactored into reusable modules |
-| Model persistence | Used Joblib to save and reload trained models |
-| Maintainability | Adopted a modular architecture with single-responsibility modules |
+| Challenge                      | Solution                                         |
+| ------------------------------ | ------------------------------------------------ |
+| Handling categorical variables | Applied binary and one-hot encoding              |
+| Different scaling requirements | Scaled only Logistic Regression features         |
+| Code duplication               | Refactored into reusable modules                 |
+| Model persistence              | Implemented Joblib serialization                 |
+| Project organization           | Adopted a modular architecture                   |
+| Maintainability                | Centralized configuration and reusable functions |
 
 ---
 
-## 🤝 Contributing
+# 🤝 Contributing
 
-Contributions, suggestions, and improvements are welcome.
+Contributions are welcome.
 
-1. Fork the repository
-2. Create a new feature branch: `git checkout -b feature/your-feature-name`
-3. Commit your changes: `git commit -m "feat: add your feature"`
-4. Push to the branch: `git push origin feature/your-feature-name`
-5. Open a Pull Request
+1. Fork the repository.
+2. Create a feature branch.
 
-Please ensure your code follows the existing modular structure and includes appropriate comments.
+```bash
+git checkout -b feature/new-feature
+```
 
----
+3. Commit your changes.
 
-## 📄 License
+```bash
+git commit -m "feat: add new feature"
+```
 
-This project is licensed under the **MIT License**. See the [`LICENSE`](LICENSE) file for full details.
+4. Push your branch.
 
----
+```bash
+git push origin feature/new-feature
+```
 
-## 🙏 Acknowledgments
-
-- [Kaggle - Heart Failure Prediction Dataset](https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction?utm_source=chatgpt.com) — for the heart disease dataset
-- [scikit-learn](https://scikit-learn.org/) — for the ML framework
-- [Pandas](https://pandas.pydata.org/) and [NumPy](https://numpy.org/) — for data manipulation
-- [Matplotlib](https://matplotlib.org/) — for visualization
-- The open-source Python community
+5. Open a Pull Request.
 
 ---
 
-## 👨‍💻 Author
+# 📄 License
 
-**Ernest Edem Dzisah**
+This project is licensed under the **MIT License**.
 
-*Computer Science and Engineering Student | Aspiring Software & AI/ML Engineer*
-
-Passionate about Artificial Intelligence, Machine Learning, Healthcare AI, and building intelligent systems that solve real-world problems.
-
-[![GitHub](https://img.shields.io/badge/GitHub-ernest--edem-181717?style=flat-square&logo=github)](https://github.com/ernest-edem)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-ernest--edem--dzisah-0A66C2?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/ernest-edem-dzisah)
+See the `LICENSE` file for more information.
 
 ---
 
-## ⭐ Support
+# 🙏 Acknowledgments
 
-If you found this project useful:
+Special thanks to:
 
-- ⭐ Star the repository
-- 🍴 Fork and build on it
-- 💡 Open an issue with feedback or suggestions
-- 🤝 Connect on LinkedIn
-
-Your support is greatly appreciated!
+* Kaggle for the Heart Failure Prediction Dataset
+* The scikit-learn development team
+* The Pandas community
+* The NumPy community
+* The Matplotlib developers
+* The Python open-source community
 
 ---
 
-> **Note:** This project was developed as part of a Machine Learning portfolio to demonstrate practical skills in data preprocessing, feature engineering, supervised learning, model evaluation, software engineering, and production-ready project organisation.
+# 👨‍💻 Author
+
+## Ernest Edem Dzisah
+
+**Computer Science and Engineering Student**
+
+Aspiring **Software Engineer**, **Machine Learning Engineer**, and **AI Engineer** passionate about building intelligent systems that solve real-world problems.
+
+### Connect with Me
+
+**GitHub**
+
+https://github.com/ernest-edem
+
+**LinkedIn**
+
+https://www.linkedin.com/in/ernest-edem-dzisah
+
+**Email**
+
+[ernestedem.d@gmail.com](mailto:ernestedem.d@gmail.com)
+
+---
+
+# ⭐ Support
+
+If you found this repository useful:
+
+* ⭐ Star the repository
+* 🍴 Fork the project
+* 💡 Open an issue with suggestions
+* 🤝 Connect with me on LinkedIn
+
+Your support is greatly appreciated.
+
+---
+
+> **Portfolio Project:** This repository was developed as part of my Machine Learning engineering portfolio to demonstrate practical skills in data preprocessing, feature engineering, supervised learning, software engineering, model evaluation, reproducible workflows, and production-ready project organization.
+

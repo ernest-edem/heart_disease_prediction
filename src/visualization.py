@@ -147,8 +147,6 @@ def confusion_matrix_chart(
     )
 
 
-
-
 # ==========================================================
 # Generic Horizontal Bar Chart
 # ==========================================================
@@ -200,6 +198,8 @@ def plot_barh_chart(
     plt.close()
 
     logger.info("%s saved successfully.", filename)
+
+
 
 # ================================
 # Logistic Regression Feature Importance

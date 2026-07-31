@@ -233,6 +233,7 @@ def main():
         "random_forest_prediction_report.csv",
     )
 
+
     # ======================================================
     # Model Evaluation
     # ======================================================
@@ -419,7 +420,6 @@ def main():
         "Random Forest Feature Importance",
         "rf_feature_importance.png",
     )
-
 
     # ======================================================
     # Predict New Patient
