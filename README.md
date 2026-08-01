@@ -108,10 +108,6 @@ This repository was created as part of my Machine Learning portfolio to showcase
 
 # 🔄 Machine Learning Pipeline
 
-<p align="center">
-    <img src="assets/ml_pipeline.png" width="90%">
-</p>
-
 The project follows a structured Machine Learning workflow:
 
 ```text
@@ -166,10 +162,6 @@ Predict New Patient
 ---
 
 # 🏗️ Project Architecture
-
-<p align="center">
-    <img src="assets/architecture.png" width="95%">
-</p>
 
 Each module has a single responsibility, making the application easier to maintain, test, and extend.
 
@@ -363,8 +355,6 @@ Its high recall makes it particularly valuable in medical prediction systems whe
 
 ---
 
--------------------------------------------------------------------
-
 # 🛠️ Technologies Used
 
 This project was built using industry-standard tools and libraries commonly used in Machine Learning and Software Engineering.
@@ -553,30 +543,11 @@ The pipeline automatically performs:
 
 # 📷 Project Screenshots
 
-## Dataset Visualizations
-
-<p align="center">
-<img src="assets/age_distribution.png" width="45%">
-<img src="assets/cholesterol_distribution.png" width="45%">
-</p>
-
-<p align="center">
-<img src="assets/heart_disease_distribution.png" width="45%">
-<img src="assets/model_comparison.png" width="45%">
-</p>
-
----
-
 ## Model Evaluation
 
 <p align="center">
-<img src="assets/lg_confusion_matrix.png" width="45%">
-<img src="assets/decision_tree_confusion_matrix.png" width="45%">
-</p>
-
-<p align="center">
-<img src="assets/random_forest_confusion_matrix.png" width="45%">
-<img src="assets/rf_feature_importance.png" width="45%">
+<img src="assets/logistic_confusion_matrix.png" width="45%">
+<img src="assets/logistic_feature_importance.png" width="45%">
 </p>
 
 ---
