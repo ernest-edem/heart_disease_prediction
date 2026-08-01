@@ -13,6 +13,9 @@
 ![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-green?style=flat-square)
 ![License](https://img.shields.io/badge/License-MIT-success?style=flat-square)
 ![Status](https://img.shields.io/badge/Status-Production%20Ready-brightgreen?style=flat-square)
+![Stars](https://img.shields.io/github/stars/ernest-edem/heart_disease_prediction?style=flat-square)
+![Forks](https://img.shields.io/github/forks/ernest-edem/heart_disease_prediction?style=flat-square)
+![Issues](https://img.shields.io/github/issues/ernest-edem/heart_disease_prediction?style=flat-square)
 
 ---
 
@@ -86,7 +89,7 @@ This project includes:
 
 # 🌍 Why This Project?
 
-Artificial Intelligence is increasingly transforming healthcare by enabling faster, more consistent, and data-driven decision making.
+Artificial Intelligence is increasingly transforming healthcare by enabling faster, more consistent, and data-driven decision-making.
 
 Heart disease prediction is a classic binary classification problem that provides an excellent opportunity to demonstrate the complete Machine Learning workflow while addressing a meaningful real-world challenge.
 
@@ -104,6 +107,25 @@ The architecture allows new models, preprocessing techniques, and deployment str
 
 This repository was created as part of my Machine Learning portfolio to showcase practical AI engineering skills beyond notebook-based experimentation.
 
+---
+## 🚀 Quick Start
+
+```bash
+git clone https://github.com/ernest-edem/heart_disease_prediction.git
+cd heart_disease_prediction
+pip install -r requirements.txt
+python main.py
+```
+
+The pipeline will:
+
+- Load the dataset
+- Preprocess data
+- Train three ML models
+- Evaluate performance
+- Generate reports and charts
+- Save trained models
+- Predict heart disease risk for a sample patient
 ---
 
 # 🔄 Machine Learning Pipeline
