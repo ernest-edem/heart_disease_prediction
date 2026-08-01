@@ -541,6 +541,27 @@ The pipeline automatically performs:
 
 ---
 
+## 📷 Project Outputs
+
+Running the pipeline automatically generates:
+
+- Dataset Summary Report
+- Encoded Dataset
+- Prediction Reports
+- Classification Reports
+- Feature Importance Reports
+- Confusion Matrix
+- Model Comparison Report
+- Saved Machine Learning Models
+
+The generated artifacts are stored in:
+
+📁 reports/
+📁 charts/
+📁 models/
+
+---
+
 # 📷 Project Screenshots
 
 ## Model Evaluation
